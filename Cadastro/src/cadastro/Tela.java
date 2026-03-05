@@ -4,6 +4,8 @@
  */
 package cadastro;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author operador
@@ -21,6 +23,38 @@ public class Tela extends javax.swing.JFrame {
     jSlider1.setMajorTickSpacing(25);
     jSlider1.setPaintLabels(false);
     jSlider1.setPaintTicks(false);
+    
+    jComboBox1.removeAllItems(); //Remove Todos Os Itens
+    
+   
+    jComboBox1.addItem("Selecione");
+    jComboBox1.addItem("Acre");
+    jComboBox1.addItem("Alagoas");
+    jComboBox1.addItem("Amapá");
+    jComboBox1.addItem("Amazonas");
+    jComboBox1.addItem("Bahia");
+    jComboBox1.addItem("Ceará");
+    jComboBox1.addItem("Distrito Federal");
+    jComboBox1.addItem("Espírito Santo");
+    jComboBox1.addItem("Goiás");
+    jComboBox1.addItem("Maranhão");
+    jComboBox1.addItem("Mato Grosso");
+    jComboBox1.addItem("Mato Grosso do Sul");
+    jComboBox1.addItem("Minas Gerais");
+    jComboBox1.addItem("Pará");
+    jComboBox1.addItem("Paraíba");
+    jComboBox1.addItem("Paraná");
+    jComboBox1.addItem("Pernambuco");
+    jComboBox1.addItem("Piauí");
+    jComboBox1.addItem("Rio de Janeiro");
+    jComboBox1.addItem("Rio Grande do Norte");
+    jComboBox1.addItem("Rio Grande do Sul");
+    jComboBox1.addItem("Rondônia");
+    jComboBox1.addItem("Roraima");
+    jComboBox1.addItem("Santa Catarina");
+    jComboBox1.addItem("São Paulo");
+    jComboBox1.addItem("Sergipe");
+    jComboBox1.addItem("Tocantins");
     }
 
     /**
@@ -40,7 +74,6 @@ public class Tela extends javax.swing.JFrame {
         jTNome = new javax.swing.JTextField();
         jTCidade = new javax.swing.JTextField();
         jTBairro = new javax.swing.JTextField();
-        jTEstado = new javax.swing.JTextField();
         jBSalvar = new javax.swing.JButton();
         jRBOutros = new javax.swing.JRadioButton();
         jRBMasculino = new javax.swing.JRadioButton();
@@ -49,6 +82,7 @@ public class Tela extends javax.swing.JFrame {
         jBFECHAR = new javax.swing.JButton();
         jSlider1 = new javax.swing.JSlider();
         jLabel6 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,14 +112,12 @@ public class Tela extends javax.swing.JFrame {
 
         jTBairro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
 
-        jTEstado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
-        jTEstado.addActionListener(new java.awt.event.ActionListener() {
+        jBSalvar.setText("SALVAR");
+        jBSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTEstadoActionPerformed(evt);
+                jBSalvarActionPerformed(evt);
             }
         });
-
-        jBSalvar.setText("SALVAR");
 
         jRBOutros.setText("Outros");
 
@@ -116,6 +148,13 @@ public class Tela extends javax.swing.JFrame {
 
         jLabel6.setText("jLabel6");
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,8 +170,8 @@ public class Tela extends javax.swing.JFrame {
                                 .addComponent(jTBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(50, 50, 50)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,11 +239,11 @@ public class Tela extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -219,10 +258,6 @@ public class Tela extends javax.swing.JFrame {
     private void jTCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTCidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTCidadeActionPerformed
-
-    private void jTEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTEstadoActionPerformed
 
     private void jBFECHARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFECHARActionPerformed
         // TODO add your handling code here:
@@ -239,6 +274,36 @@ public class Tela extends javax.swing.JFrame {
     private void jTNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTNomeActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jBSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalvarActionPerformed
+       String nome = jTNome.getText();
+       String idade = jLabel6.getText();
+       String cidade = jTCidade.getText();
+       String bairro = jTBairro.getText();
+       String estado = jComboBox1.getSelectedItem() .toString();
+       String genero = null;
+       
+            //VERIFICAR QUAL GÊNERO FOI SELECIONADO
+        if (jRBMasculino.isSelected()) {
+            genero = "Masculino";
+    }                                        
+        else if (jRBFeminino.isSelected()) {
+            genero = "Feminino";
+        }else if (jRBOutros.isSelected()) {
+            genero = "Outro";
+        }
+        JOptionPane.showMessageDialog(null,"NOME: "+nome
+       
+       +"\nIdade: "+ idade
+        +"\nCidade: "+cidade
+        +"\nBairro: "+bairro
+        +"\nEstado: "+estado
+        +"\nGênero: "+genero);
+    }//GEN-LAST:event_jBSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,6 +343,7 @@ public class Tela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBFECHAR;
     private javax.swing.JButton jBSalvar;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jL;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -291,7 +357,6 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JSlider jSlider1;
     private javax.swing.JTextField jTBairro;
     private javax.swing.JTextField jTCidade;
-    private javax.swing.JTextField jTEstado;
     private javax.swing.JTextField jTNome;
     // End of variables declaration//GEN-END:variables
 }
